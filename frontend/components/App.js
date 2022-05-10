@@ -1,17 +1,13 @@
 import React from 'react'
-import '../styles/reset.css'
-import '../styles/styles.css'
 import Form from './Form';
 import TodoList from './TodoList';
-
-const tasks = [];
 
 
 export default class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      tasks: tasks
+      tasks: []
     }
   }
 
@@ -46,7 +42,7 @@ export default class App extends React.Component {
 
   clearCompleted = () =>{
     this.setState({
-      tasks: this.state.tasks.filter(item => !itemCompleted)
+      tasks: this.state.tasks.filter(item => !item.completed)
     })
   }
 
